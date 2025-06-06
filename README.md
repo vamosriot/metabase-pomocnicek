@@ -86,30 +86,31 @@ For custom domains, you may need to manually add them to the manifest.
 ### Project Structure
 
 ```
-├── src/                   # Source code
-│   ├── components/        # React components
-│   ├── services/          # AI service and API handlers
-│   ├── utils/             # Utility functions (util.js, schema.js)
-│   ├── content/           # Content scripts for Metabase integration
-│   ├── background/        # Background service worker
-│   ├── popup/             # Extension popup (UI + logic)
-│   └── options/           # Options page (UI + logic)
-├── public/                # Static assets
-│   └── icons/             # Extension icons (16.svg, 128.svg)
-├── tests/                 # Test files and setup
-│   ├── setupTests.js      # Jest configuration and mocks
-│   └── utils.test.js      # Utility function tests
 ├── _locales/              # Internationalization
 │   ├── en/                # English translations
 │   └── cs/                # Czech translations
-├── docs/                  # Documentation
-│   └── privacy.html       # Privacy policy
 ├── dist/                  # Built extension (generated)
+├── 16.svg                 # 16px extension icon
+├── 128.svg                # 128px extension icon
+├── ai.js                  # AI service with generation methods
+├── background.js          # Background service worker
+├── content.js             # Content script for Metabase integration
 ├── manifest.json          # Extension manifest
+├── options.html           # Options page UI
+├── options.js             # Options page logic
+├── popup.html             # Extension popup UI
+├── popup.js               # Extension popup logic
+├── privacy.html           # Privacy policy
+├── schema.js              # Database schema handling
+├── setupTests.js          # Jest configuration and mocks
+├── util.js                # Utility functions (API key management)
+├── utils.test.js          # Utility function tests
 ├── vite.config.js         # Build configuration
 ├── jest.config.js         # Test configuration
 ├── .eslintrc.js           # Linting rules
 ├── .prettierrc            # Code formatting
+├── babel.config.js        # Babel configuration
+├── tsconfig.json          # TypeScript configuration
 └── package.json           # Dependencies and scripts
 ```
 
@@ -188,7 +189,7 @@ The extension supports multiple AI providers:
 - Database schema information is cached locally
 - Only table/column names are sent to AI service
 - No actual data is transmitted
-- See [Privacy Policy](docs/privacy.html) for details
+- See [Privacy Policy](privacy.html) for details
 
 ## Browser Support
 

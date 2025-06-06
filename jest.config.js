@@ -1,20 +1,19 @@
 export default {
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/tests/setupTests.js'],
+  setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
   moduleNameMapping: {
-    '^@/(.*)$': '<rootDir>/src/$1',
-    '^@components/(.*)$': '<rootDir>/src/components/$1',
-    '^@services/(.*)$': '<rootDir>/src/services/$1',
-    '^@utils/(.*)$': '<rootDir>/src/utils/$1',
+    '^@/(.*)$': '<rootDir>/$1',
   },
   testMatch: [
-    '<rootDir>/tests/**/*.{test,spec}.{js,jsx}',
-    '<rootDir>/src/**/*.{test,spec}.{js,jsx}',
+    '<rootDir>/**/*.{test,spec}.{js,jsx}',
   ],
   collectCoverageFrom: [
-    'src/**/*.{js,jsx}',
-    '!src/**/*.d.ts',
-    '!tests/setupTests.js',
+    '*.{js,jsx}',
+    '!*.d.ts',
+    '!setupTests.js',
+    '!jest.config.js',
+    '!vite.config.js',
+    '!babel.config.js',
   ],
   transform: {
     '^.+\\.(js|jsx)$': 'babel-jest',

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AI Helper – Options</title>
+  <style>
+    body     { font-family: system-ui, sans-serif; margin: 16px; }
+    input    { width: 100%; padding: 6px; }
+    button   { margin-top: 8px; }
+    #saved   { margin-left: 8px; color: green; visibility: hidden; }
+    .section { margin-bottom: 20px; }
+    .privacy { margin-top: 20px; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h2>API Key</h2>
+    <input id="key" type="password" placeholder="sk-..." />
+    <button id="save">Save</button><span id="saved">✓ Saved!</span>
+  </div>
+
+  <div class="section">
+    <h2>Schema Cache</h2>
+    <button id="refresh">Refresh Schema</button>
+  </div>
+
+  <div class="privacy">
+    <a href="privacy.html" target="_blank">Privacy Policy</a>
+  </div>
+
+  <script src="options.js" type="module"></script>
+</body>
+</html>

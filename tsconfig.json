@@ -15,15 +15,14 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@services/*": ["src/services/*"],
-      "@utils/*": ["src/utils/*"]
+      "@/*": ["./*"]
     }
   },
   "include": [
-    "src",
-    "tests"
+    "*.js",
+    "*.jsx",
+    "*.ts",
+    "*.tsx"
   ],
   "exclude": [
     "node_modules",

@@ -7,10 +7,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        popup: resolve(__dirname, 'src/popup/popup.html'),
-        options: resolve(__dirname, 'src/options/options.html'),
-        background: resolve(__dirname, 'src/background/background.js'),
-        content: resolve(__dirname, 'src/content/content.js'),
+        popup: resolve(__dirname, 'popup.html'),
+        options: resolve(__dirname, 'options.html'),
+        background: resolve(__dirname, 'background.js'),
+        content: resolve(__dirname, 'content.js'),
       },
       output: {
         entryFileNames: '[name].js',
@@ -23,10 +23,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
-      '@components': resolve(__dirname, 'src/components'),
-      '@services': resolve(__dirname, 'src/services'),
-      '@utils': resolve(__dirname, 'src/utils'),
+      '@': resolve(__dirname, '.'),
     },
   },
 }); 

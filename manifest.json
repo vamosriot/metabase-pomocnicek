@@ -4,12 +4,12 @@
   "version": "1.0.0",
   "description": "Adds an AI copilot that writes SQL inside Metabase.",
   "icons": {
-    "16": "public/icons/16.svg",
-    "128": "public/icons/128.svg"
+    "16": "16.svg",
+    "128": "128.svg"
   },
   "action": {
-    "default_icon": { "16": "public/icons/16.svg" },
-    "default_popup": "src/popup/popup.html"
+    "default_icon": { "16": "16.svg" },
+    "default_popup": "popup.html"
   },
   "content_scripts": [{
     "matches": [
@@ -17,14 +17,14 @@
       "https://*.metabase.com/*",
       "https://*/metabase/*"
     ],
-    "js": ["src/content/content.js"],
+    "js": ["content.js"],
     "run_at": "document_idle"
   }],
   "background": { 
-    "service_worker": "src/background/background.js"
+    "service_worker": "background.js"
   },
   "options_ui": {
-    "page": "src/options/options.html",
+    "page": "options.html",
     "open_in_tab": false
   },
   "permissions": [
