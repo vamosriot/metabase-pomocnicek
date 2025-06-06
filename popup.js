@@ -21,7 +21,7 @@ chrome.runtime.onMessage.addListener((msg) => {
 chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
-    func: () => window.getSelection().toString()
+    func: () => globalThis.getSelection().toString()
   }).then(([{ result }]) => {
     if (result) promptEl.value = result;
   });

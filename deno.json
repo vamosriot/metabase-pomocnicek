@@ -1,0 +1,1 @@
+{"lint":{"exclude":["dist/","node_modules/","_locales/","*.test.js","jest.config.js","babel.config.js","vite.config.js","setupTests.js"]}}
