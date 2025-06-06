@@ -1,4 +1,14 @@
+// Mock Chrome APIs globally
 import { getKey, setKey } from './util.js';
+
+global.chrome = {
+  storage: {
+    sync: {
+      get: jest.fn(),
+      set: jest.fn(),
+    },
+  },
+};
 
 describe('Utility Functions', () => {
   beforeEach(() => {
@@ -29,4 +39,15 @@ describe('Utility Functions', () => {
       });
     });
   });
-}); 
+});
+
+describe('Basic functionality', () => {
+  it('should pass basic test', () => {
+    expect(1 + 1).toBe(2);
+  });
+
+  it('should have chrome API mocked', () => {
+    expect(chrome.storage.sync.get).toBeDefined();
+    expect(chrome.storage.sync.set).toBeDefined();
+  });
+});

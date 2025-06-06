@@ -9,8 +9,7 @@ let aiBtn;
 function maybeAddButton() {
   // Monaco in Metabase 49+ has class .monaco-editor; fallback to textarea
   const editorRoot =
-      document.querySelector('.monaco-editor') ||
-      document.querySelector('textarea.sql-editor');
+    document.querySelector('.monaco-editor') || document.querySelector('textarea.sql-editor');
 
   if (!editorRoot || aiBtn) return;
 
@@ -60,4 +59,4 @@ chrome.runtime.onMessage.addListener((msg) => {
     ta.value = msg.sql;
     ta.dispatchEvent(new Event('input', { bubbles: true }));
   }
-}); 
+});

@@ -4,13 +4,13 @@ import '@testing-library/jest-dom';
 global.chrome = {
   storage: {
     sync: {
-      get: jest.fn().mockImplementation(() => Promise.resolve({})),
-      set: jest.fn().mockImplementation(() => Promise.resolve()),
+      get: jest.fn(),
+      set: jest.fn(),
     },
     local: {
-      get: jest.fn().mockImplementation(() => Promise.resolve({})),
-      set: jest.fn().mockImplementation(() => Promise.resolve()),
-      remove: jest.fn().mockImplementation(() => Promise.resolve()),
+      get: jest.fn(),
+      set: jest.fn(),
+      remove: jest.fn(),
     },
   },
   runtime: {
@@ -21,12 +21,27 @@ global.chrome = {
     getManifest: jest.fn().mockReturnValue({ version: '1.0.0' }),
   },
   tabs: {
-    query: jest.fn().mockImplementation(() => Promise.resolve([])),
+    query: jest.fn(),
   },
   scripting: {
-    executeScript: jest.fn().mockImplementation(() => Promise.resolve([])),
+    executeScript: jest.fn(),
   },
 };
 
 // Mock fetch
-global.fetch = jest.fn(); 
+global.fetch = jest.fn();
+
+// Mock navigator.clipboard
+Object.assign(navigator, {
+  clipboard: {
+    writeText: jest.fn(() => Promise.resolve()),
+  },
+});
+
+// Mock globalThis.getSelection
+global.globalThis = {
+  ...global.globalThis,
+  getSelection: jest.fn(() => ({
+    toString: jest.fn(() => ''),
+  })),
+};

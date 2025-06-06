@@ -8,8 +8,8 @@ export const tables = {
       status: 'status',
       total_price: 'total_price',
       customer_id: 'customer_id',
-      shipping_address: 'shipping_address'
-    }
+      shipping_address: 'shipping_address',
+    },
   },
   customers: {
     name: 'customers',
@@ -18,8 +18,8 @@ export const tables = {
       email: 'email',
       first_name: 'first_name',
       last_name: 'last_name',
-      created_at: 'created_at'
-    }
+      created_at: 'created_at',
+    },
   },
   order_items: {
     name: 'order_items',
@@ -28,8 +28,8 @@ export const tables = {
       order_id: 'order_id',
       product_id: 'product_id',
       quantity: 'quantity',
-      price: 'price'
-    }
+      price: 'price',
+    },
   },
   products: {
     name: 'products',
@@ -39,7 +39,11 @@ export const tables = {
       description: 'description',
       price: 'price',
       stock: 'stock',
-      category_id: 'category_id'
-    }
-  }
-}; 
+      category_id: 'category_id',
+    },
+  },
+};
+
+export async function getSchema() {
+  return Object.values(tables);
+}
